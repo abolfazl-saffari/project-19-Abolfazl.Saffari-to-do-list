@@ -58,6 +58,7 @@ input[type="text"] {
 
 .checklist_adder {
     width: 28%;
+    height: 4.2rem;
     margin: 1vw auto 0 auto;
     background-color: #ffffff;
     border-radius: 5px;
@@ -69,8 +70,6 @@ input[type="text"] {
     border: none;
     float: left;
     width: 7%;
-    cursor: pointer;
-
 }
 
 .checklist_adder-label-input {
@@ -89,6 +88,80 @@ input[type="text"] {
 
 }
 
+.checklist-list {
+    width: 28%;
+    height: 16rem;
+    margin: 1.5vw auto 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 0 0.8vw;
+    box-shadow: 0 20px 30px rgba(189, 189, 189, 0.48);
+}
+
+.checklist-list-ul {
+
+}
+
+.checklist-list-ul-li {
+    list-style-type: none;
+}
+
+.checklist-controlBoard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr;
+    gap: 0 0;
+    grid-template-areas:
+    "checklist-controlBoard-remaining_items checklist-controlBoard-base_orders checklist-controlBoard-clear_order";
+    width: 28%;
+    height: 3rem;
+    margin: 0 auto 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 0 0.8vw;
+    box-shadow: 0 20px 30px rgba(189, 189, 189, 0.48);
+}
+.checklist-controlBoard-remaining_items {
+    grid-area: checklist-controlBoard-remaining_items;
+    font-size: 14px;
+    color: #777a92;
+}
+.checklist-controlBoard-base_orders{
+    grid-area: checklist-controlBoard-base_orders;
+}
+
+.checklist-controlBoard-base_orders-all_order {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #3a7cfd;
+    margin-right: 1rem;
+}
+.checklist-controlBoard-base_orders-active_order {
+    font-size: 14px;
+    font-weight: 600;
+    color: #777a92;
+    cursor: pointer;
+}
+.checklist-controlBoard-base_orders-completed_order {
+    font-size: 14px;
+    font-weight: 600;
+    color: #777a92;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.checklist-controlBoard-base_orders-all_order:hover,.checklist-controlBoard-base_orders-active_order:hover,.checklist-controlBoard-base_orders-completed_order:hover,.checklist-controlBoard-clear_order:hover{
+    color: #424242;
+}
+.checklist-controlBoard-clear_order {
+    grid-area: checklist-controlBoard-clear_order;
+    text-align: right;
+    font-size: 13.3px;
+    color: #777a92;
+    cursor: pointer;
+}
+
+
 .footer {
     color: #777a92;
     position: fixed;
@@ -99,6 +172,7 @@ input[type="text"] {
     bottom: 0;
     box-shadow: 0 -5px 5px rgba(189, 189, 189, 0.48);
 }
-.footer-link{
+
+.footer-link {
     color: #3a7bfd;
 }
