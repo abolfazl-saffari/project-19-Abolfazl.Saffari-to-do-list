@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 </head>
 <body>
 <!--bk = background -->
@@ -20,15 +21,17 @@
         <h1 class="header-title">TODO</h1>
         <img class="header-toggle-icon" src="res/images/icon-moon.svg" alt="icon-moon">
     </div>
-    <div class="checklist-adder">
-        <label>
-            <input>
+    <div class="checklist_adder">
+        <!--این پایین رو یادت نره-->
+        <form action="" method="get">
+        <label for="list-taker" class="checklist_adder-label">
+             <span class="checklist_adder-label-icon iconify" data-icon="healthicons:circle-medium-outline"
+                   style="color: #e4e5f1;" data-width="65" data-flip="horizontal,vertical"></span>
+            <input class="checklist_adder-label-input" type="text" id="list-taker" placeholder="Create a new todo...">
         </label>
+        </form>
     </div>
     <div class="checklist">
-        <label>
-            <input>
-        </label>
         <div class="checklist-controlBoard"></div>
         <div class="checklist-instruction"></div>
     </div>

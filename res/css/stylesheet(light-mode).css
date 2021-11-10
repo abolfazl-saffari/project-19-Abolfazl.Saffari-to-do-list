@@ -3,6 +3,13 @@ body {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
+textarea:focus, input:focus{
+    outline: none;
+}
+input[type="text"]
+{
+    font-size:18px;
+}
 
 .head {
     width: 100%;
@@ -38,11 +45,36 @@ body {
     letter-spacing: 17px;
     display: inline-block;
     color: #ffffff;
-    margin-right: 10vw;
+    margin-right: 8vw;
 }
 
 .header-toggle-icon {
     grid-area: header-toggle-icon;
     width: 28px;
-    padding-top: 33px;
+    padding-top: 32px;
+    cursor: pointer;
+}
+
+.checklist_adder {
+    width: 28%;
+    margin: 1vw auto 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 0 0.8vw;
+}
+.checklist_adder-label-icon{
+    border: none;
+    float: left;
+    width: 7%;
+    cursor: pointer;
+
+}
+.checklist_adder-label-input{
+    border: none;
+    width: 87%;
+    height: 4rem;
+    color: #616161;
+}
+.checklist_adder-label-input::-webkit-input-placeholder {
+    font-family:'Josefin Sans', sans-serif;
 }
