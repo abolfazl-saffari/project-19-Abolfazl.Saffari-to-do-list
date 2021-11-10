@@ -3,12 +3,13 @@ body {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
-textarea:focus, input:focus{
+
+textarea:focus, input:focus {
     outline: none;
 }
-input[type="text"]
-{
-    font-size:18px;
+
+input[type="text"] {
+    font-size: 18px;
 }
 
 .head {
@@ -61,20 +62,43 @@ input[type="text"]
     background-color: #ffffff;
     border-radius: 5px;
     padding: 0 0.8vw;
+    box-shadow: 0 20px 30px rgba(189, 189, 189, 0.48);
 }
-.checklist_adder-label-icon{
+
+.checklist_adder-label-icon {
     border: none;
     float: left;
     width: 7%;
     cursor: pointer;
 
 }
-.checklist_adder-label-input{
+
+.checklist_adder-label-input {
     border: none;
     width: 87%;
     height: 4rem;
     color: #616161;
 }
+
 .checklist_adder-label-input::-webkit-input-placeholder {
-    font-family:'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*cursor = grab*/
+.checklist {
+
+}
+
+.footer {
+    color: #777a92;
+    position: fixed;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -5px 5px rgba(189, 189, 189, 0.48);
+}
+.footer-link{
+    color: #3a7bfd;
 }
