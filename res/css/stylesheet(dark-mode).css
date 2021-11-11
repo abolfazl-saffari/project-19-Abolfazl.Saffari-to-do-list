@@ -91,23 +91,55 @@ input[type="text"] {
 }
 
 .checklist-list {
-    width: 27.5%;
+    width: 29.1%;
     min-height: 16rem;
     margin: 1.5vw auto 0 auto;
     background-color: #25273c;
     border-radius: 5px 5px 0 0;
-    padding: 0 0.8vw;
+    padding: 0;
 }
 
 .checklist-list-ul {
     margin: 0;
-    padding: 0 0 1vw 0 ;
-    background-color: #25273c;
+    padding: 0 0 1vw 0;
 }
 
 .checklist-list-ul-li {
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+    grid-template-rows: 0.1fr;
+    gap: 0 0;
+    grid-template-areas:
+    "checklist-list-ul-li-check_\&_circle_icon checklist-list-ul-li-todo checklist-list-ul-li-cross_icon";
     list-style-type: none;
+    border-bottom: 1px solid #e4e5f1;
+    padding: 0.5vw 0;
+    cursor: grab;
     color: #cacde8;
+}
+.checklist-list-ul-li:hover .checklist-list-ul-li-cross_icon img{
+    display: block;
+}
+
+.checklist-list-ul-li-check_\&_circle_icon {
+    margin-left: 1.5vw;
+    margin-right: 0.5vw;
+}
+
+.checklist-list-ul-li-todo {
+    color: #cacde8;
+}
+
+
+.checklist-list-ul-li-cross_icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checklist-list-ul-li-cross_icon img{
+    display: none;
+    cursor: pointer;
 }
 
 .checklist-controlBoard {
