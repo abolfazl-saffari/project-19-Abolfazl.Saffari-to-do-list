@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Todo App</title>
     <link rel="stylesheet" href="res/css/stylesheet(light-mode).css" type="text/css">
-    <link rel="stylesheet" href="res/css/stylesheet(dark-mode).css" type="text/css">
     <link rel="icon" href="res/images/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
 <div class="container">
     <div class="header">
         <h1 class="header-title">TODO</h1>
-        <img class="header-toggle-icon" src="res/images/icon-moon.svg" alt="icon-moon">
+        <img class="header-toggle_icon" onclick="toggleTheme_colors();toggleTheme_background();toggleTheme_icon()" src="res/images/icon-moon.svg" alt="icon-moon">
     </div>
     <div class="checklist_adder">
         <!--این پایین رو یادت نره-->
@@ -38,6 +37,22 @@
                 <li class="checklist-list-ul-li">B</li>
                 <li class="checklist-list-ul-li">C</li>
                 <li class="checklist-list-ul-li">D</li>
+                <li class="checklist-list-ul-li">A</li>
+                <li class="checklist-list-ul-li">B</li>
+                <li class="checklist-list-ul-li">C</li>
+                <li class="checklist-list-ul-li">D</li>
+                <li class="checklist-list-ul-li">A</li>
+                <li class="checklist-list-ul-li">B</li>
+                <li class="checklist-list-ul-li">C</li>
+                <li class="checklist-list-ul-li">D</li>
+                <li class="checklist-list-ul-li">A</li>
+                <li class="checklist-list-ul-li">B</li>
+                <li class="checklist-list-ul-li">C</li>
+                <li class="checklist-list-ul-li">D</li>
+                <li class="checklist-list-ul-li">A</li>
+                <li class="checklist-list-ul-li">B</li>
+                <li class="checklist-list-ul-li">C</li>
+                <li class="checklist-list-ul-li">D</li>
             </ul>
         </div>
         <div class="checklist-controlBoard">
@@ -50,7 +65,9 @@
             <span class="checklist-controlBoard-clear_order">Clear Completed</span>
         </div>
     </div>
-    <div class="instruction"></div>
+    <div class="instruction">
+       <p class="instruction-first_one">Drag and drop to reorder list</p>
+    </div>
     <footer>
         <div class="footer">
             Challenge by <a class="footer-link" href="https://www.frontendmentor.io/?ref=challenge">Frontend Mentor</a>. Coded with lots of  ❤️&nbsp by  <a class="footer-link" href="https://www.frontendmentor.io/profile/mileine"> Mi Souto </a>.
