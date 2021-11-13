@@ -84,7 +84,7 @@ input[type="text"] {
 .checklist_adder-icon-icon_border {
     width: 22px;
     height: 22px;
-    border: 1px solid #e4e5f1;
+    border: 1px solid #393a4c;
     border-radius: 50%;
 }
 
@@ -133,7 +133,7 @@ input[type="text"] {
     grid-template-areas:
     "checklist-list-ul-li-check_\&_circle_icon checklist-list-ul-li-todo checklist-list-ul-li-cross_icon";
     list-style-type: none;
-    border-bottom: 1px solid #e4e5f1;
+    border-bottom: 1px solid #393a4c;
     padding: 0.5vw 0;
     cursor: grab;
     color: #cacde8;
@@ -155,7 +155,7 @@ input[type="text"] {
     align-items: center;
 }
 .checklist-list-ul-li-check_\&_circle_icon-icon{
-    border: 1px solid #e4e5f1;
+    border: 1px solid #393a4c;
     width: 22px;
     height: 22px;
     border-radius: 50%;
