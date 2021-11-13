@@ -90,7 +90,7 @@ input[type="text"] {
     grid-area: -checklist_adder-form;
 }
 
-.checklist_adder-form-label{
+.checklist_adder-form-label {
 
 }
 
@@ -266,4 +266,35 @@ input[type="text"] {
 
 .footer-link {
     color: #3a7bfd;
+}
+
+@media only screen and (max-width: 425px) {
+    .header {
+        width: 90%;
+    }
+
+    .checklist_adder {
+        width: 90%;
+    }
+
+    .checklist-list {
+        width: 90%;
+    }
+
+    .checklist-controlBoard {
+        width: 88.5%;
+    }
+
+    .instruction {
+        width: 88.5%;
+    }
+
+    .footer {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        height: 5%;
+        font-size: 6px;
+        padding: 2px 0;
+    }
 }
