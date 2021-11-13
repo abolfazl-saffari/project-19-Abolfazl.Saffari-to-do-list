@@ -120,10 +120,24 @@ input[type="text"] {
 .checklist-list-ul-li:hover .checklist-list-ul-li-cross_icon img{
     display: block;
 }
+.checklist-list-ul-li:hover .checklist-list-ul-li-check_\&_circle_icon-icon{
+    border: solid 1px transparent;
+    background-image: linear-gradient(white, white),
+    linear-gradient(to right, #57ddff, #c058f3);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
 
-.checklist-list-ul-li-check_\&_circle_icon {
-    margin-left: 1.5vw;
-    margin-right: 0.5vw;
+.checklist-list-ul-li-check_\&_circle_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checklist-list-ul-li-check_\&_circle_icon-icon{
+    border: 1px solid #e4e5f1;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
 }
 
 .checklist-list-ul-li-todo {
