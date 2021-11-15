@@ -38,9 +38,19 @@ function todo(realInput) {
     let todoDiv = $.createElement('div');
     todoDiv.className = 'checklist-list-ul-li-statue';
 
+    todoDiv.addEventListener('click',function (event){
+        event.target.parentElement.style.textDecoration = 'line-through';
+        event.target.style.background = 'url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3)'
+        event.target.style.backgroundRepeat = 'no-repeat';
+        event.target.style.backgroundPosition = '50%';
+    })
+
     let todoSpan = $.createElement('span');
     todoSpan.className ='checklist-list-ul-li-txt';
-    todoSpan.innerHTML = realInput
+    todoSpan.innerHTML = realInput;
+    todoSpan.addEventListener('click',function (event){
+        event.target.style.textDecoration = 'line-through';
+    })
 
     let todoImg = $.createElement('img');
     todoImg.className = 'checklist-list-ul-li-remove';
