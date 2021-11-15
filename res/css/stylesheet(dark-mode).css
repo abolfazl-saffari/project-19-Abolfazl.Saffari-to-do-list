@@ -112,74 +112,62 @@ input[type="text"] {
 }
 
 .checklist-list {
-    width: 29.1%;
+    width: 29%;
     min-height: 16rem;
     margin: 1.5vw auto 0 auto;
-    background-color: #25273c;
     border-radius: 5px 5px 0 0;
     padding: 0;
+    background-color: #25273c;
 }
 
 .checklist-list-ul {
     margin: 0;
     padding: 0 0 1vw 0;
+    background-color: #25273c;
 }
 
-.checklist-list-ul-li {
-    display: grid;
-    grid-template-columns: 0.1fr 0.8fr 0.1fr;
-    grid-template-rows: 0.1fr;
-    gap: 0 0;
-    grid-template-areas:
-    "checklist-list-ul-li-check_\&_circle_icon checklist-list-ul-li-todo checklist-list-ul-li-cross_icon";
+.checklist-list-ul-li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style-type: none;
-    border-bottom: 1px solid #393a4c;
-    padding: 0.5vw 0;
+    padding: 1vw 0.75vw;
+    border-bottom: 1px solid #e4e5f1;
     cursor: grab;
-    color: #cacde8;
+
 }
-.checklist-list-ul-li:hover .checklist-list-ul-li-cross_icon img{
+.checklist-list-ul-li:hover .checklist-list-ul-li-remove{
     display: block;
 }
-.checklist-list-ul-li:hover .checklist-list-ul-li-check_\&_circle_icon-icon{
+.checklist-list-ul-li:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
     background-image: linear-gradient(#25273c, #25273c),
     linear-gradient(to right, #57ddff, #c058f3);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    width: 22px;
+    height: 22px;
 }
-
-.checklist-list-ul-li-check_\&_circle_icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.checklist-list-ul-li-check_\&_circle_icon-icon{
-    border: 1px solid #393a4c;
+.checklist-list-ul-li-statue{
+    border: 1px solid #e4e5f1;
     width: 22px;
     height: 22px;
     border-radius: 50%;
 }
 
-.checklist-list-ul-li-todo {
-    color: #cacde8;
+.checklist-list-ul-li-txt{
+    flex-grow:3;
+    padding: 0 0.75vw;
+    color: #616161;
 }
-
-
-.checklist-list-ul-li-cross_icon {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.checklist-list-ul-li-cross_icon img{
-    display: none;
+.checklist-list-ul-li-remove{
     cursor: pointer;
+    display: none;
 }
 
 .checklist-controlBoard {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.9fr 1fr 0.9fr;
     grid-template-rows: 0.1fr;
     gap: 0 0;
     grid-template-areas:

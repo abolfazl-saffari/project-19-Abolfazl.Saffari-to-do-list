@@ -1,5 +1,6 @@
+let $ = document;
 function toggleTheme_colors() {
-    let theme = document.getElementsByTagName('link')[0];
+    let theme = $.getElementsByTagName('link')[0];
     if (theme.getAttribute('href') === 'res/css/stylesheet(light-mode).css') {
         theme.setAttribute('href', 'res/css/stylesheet(dark-mode).css');
     } else {
@@ -8,7 +9,7 @@ function toggleTheme_colors() {
 }
 
 function toggleTheme_background() {
-    let background = document.getElementsByClassName('head-background')[0];
+    let background = $.getElementsByClassName('head-background')[0];
     if (background.getAttribute('src') === 'res/images/bg-desktop-light.jpg') {
         background.setAttribute('src', 'res/images/bg-desktop-dark.jpg');
     } else {
@@ -17,7 +18,7 @@ function toggleTheme_background() {
 }
 
 function toggleTheme_icon() {
-    let icon = document.getElementsByClassName('header-toggle_icon')[0];
+    let icon = $.getElementsByClassName('header-toggle_icon')[0];
     if (icon.getAttribute('src') === 'res/images/icon-moon.svg') {
         icon.setAttribute('src', 'res/images/icon-sun.svg');
     } else {
@@ -25,53 +26,106 @@ function toggleTheme_icon() {
     }
 }
 
-let listRemover = document.getElementsByClassName("checklist-list-ul-li-cross_icon");
-let i;
-for (i = 0; i < listRemover.length; i++) {
-    listRemover[i].onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-    }
+
+
+let myInput = $.querySelector('input');
+let addToForm = $.querySelector('.checklist_adder-form');
+
+function todo(realInput) {
+    let todoLi = $.createElement('li');
+    todoLi.className ='checklist-list-ul-li';
+
+    let todoDiv = $.createElement('div');
+    todoDiv.className = 'checklist-list-ul-li-statue';
+
+    let todoSpan = $.createElement('span');
+    todoSpan.className ='checklist-list-ul-li-txt';
+    todoSpan.innerHTML = realInput
+
+    let todoImg = $.createElement('img');
+    todoImg.className = 'checklist-list-ul-li-remove';
+    todoImg.setAttribute('src','res/images/icon-cross.svg')
+    todoImg.setAttribute('alt','cross_icon')
+
+    todoImg.addEventListener('click',function (event){
+        event.target.parentElement.remove()
+    })
+
+    todoLi.appendChild(todoDiv)
+    todoLi.appendChild(todoSpan)
+    todoLi.appendChild(todoImg)
+
+    let todoUl =$.querySelector('ul');
+    todoUl.appendChild(todoLi)
 }
 
-function new_Element() {
-    let li_maker = document.createElement('li');
-    li_maker.className = 'checklist-list-ul-li';
-    let inputValue = document.getElementById('my_input').value;
-    let t = document.createTextNode(inputValue)
-    let div_maker01 = document.createElement('div');
-    div_maker01.className = 'checklist-list-ul-li-check_&_circle_icon';
-    let div_maker02 = document.createElement('div');
-    div_maker02.className = 'checklist-list-ul-li-todo';
-    let div_maker03 = document.createElement('div');
-    div_maker03.className = 'checklist-list-ul-li-cross_icon';
-    let divInside = document.createElement('div');
-    divInside.className = 'checklist-list-ul-li-check_&_circle_icon-icon'
-    let pInside = document.createElement('p');
-    pInside.appendChild(t);
-    let imgInside = document.createElement('img');
-    imgInside.setAttribute('src', 'res/images/icon-cross.svg')
-    imgInside.setAttribute('alt', 'cross_icon')
-    li_maker.appendChild(div_maker01);
-    li_maker.appendChild(div_maker02);
-    li_maker.appendChild(div_maker03);
-    div_maker01.appendChild(divInside);
-    div_maker02.appendChild(pInside);
-    div_maker03.appendChild(imgInside);
-    console.log(li_maker);
-
-    if (inputValue === '') {
-        alert("یادت رفت چیزی بنویسی !!!!");
-    } else {
-        document.getElementById('my_UL').appendChild(li_maker)
-    }
-    document.getElementById('my_input').value='';
-    for (i = 0; i < listRemover.length; i++) {
-        listRemover[i].onclick = function() {
-            let div = this.parentElement;
-            div.style.display = "none";
+addToForm.addEventListener('submit', function (event) {
+    event.preventDefault()
+})
+myInput.addEventListener('keydown', function (event) {
+    let realInput = event.target.value.trim();
+    // با target اومدیم object چیزی رو که می خواستیم رو بیرون کشیدیدم
+    if (event.keyCode === 13) {
+        if (realInput === '') {
+            alert('میشه خالی enter نزنی اَه مرسی ')
+        } else {
+            myInput.value = '';
+            todo(realInput)
         }
     }
-}
-//let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
-//reamingItems.innerHTML =  document.getElementsByTagName('li').length + ' items left'
+})
+// let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
+//  reamingItems.innerHTML =  document.getElementsByTagName('li').length + ' items left'
+//function countItems(listID){
+// var ul = document.getElementById(listID);
+// var i=0, itemCount =0;
+// while(ul.getElementsByTagName(‘li’) [i++]) itemCount++;
+// document.write(itemCount);
+// }
+//document.addEventListener("click", function adder(){
+//   let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
+//   let final =document.getElementsByTagName('li').length;
+//   reamingItems.textContent = final + ' items left';
+//   document.addEventListener('click',function remover(){
+//       let final01 =document.getElementsByClassName('checklist-list-ul-li-cross_icon');
+//       final--
+//
+//   })
+//  })
+//function adder(){
+//     let count = 0;
+//     for (let i = 0 ; i < document.getElementsByTagName('li').length;i++){
+//         count ++
+//     }
+//     let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
+//      return reamingItems.textContent = count +' items left';
+// }
+//
+// console.log(adder())
+
+//document.addEventListener("click", function adder() {
+//     let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
+//     let final = document.getElementsByTagName('li').length;
+//     reamingItems.textContent = final + ' items left';
+// })
+//let low = document.getElementsByClassName('checklist-list-ul-li-cross_icon');
+// low.onclick = function (){
+//    return  final--
+// }
+//let circleTOCheck = $.querySelectorAll('.checklist-list-ul-li-check_and_circle_icon-icon');
+// let sentenceToLine = $.querySelectorAll('.checklist-list-ul-li-todo p')
+// console.log(circleTOCheck)
+// for (let i = 0; i<circleTOCheck.length,i<sentenceToLine.length;i++){
+//     circleTOCheck[i].addEventListener('click',todo_completed);
+//     sentenceToLine[i].addEventListener('click',todo_completed01);
+// }
+// function todo_completed(){
+//     this.classList.toggle('checklist-completed');
+// }
+// function todo_completed01(){
+//     this.classList.toggle('checklist-list-ul-li-todo-p')
+// }
+// function hoverRomover(){
+//     this.classList.toggle('noHover')
+// }
+
