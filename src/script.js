@@ -39,11 +39,6 @@ function todo(realInput) {
     let todoDiv = $.createElement('div');
     todoDiv.className = 'checklist-list-ul-li-statue';
 
-    //todoDiv.addEventListener('click',function (event){
-    //    event.target.parentElement.classList.toggle('line-maker');
-    //    event.target.classList.toggle('circleFill');
-    //})
-
     let todoSpan = $.createElement('span');
     todoSpan.className = 'checklist-list-ul-li-txt';
     todoSpan.innerHTML = realInput;
@@ -51,9 +46,6 @@ function todo(realInput) {
         event.target.children[1].classList.toggle('line-maker');
         event.target.children[0].classList.toggle('circleFill')
         itemsLeft.textContent = counter() - ol() +' items left'
-       // if (event.target.children[0].classList.contains('circleFill')){
-        //    itemsLeft.textContent = counter01()
-       // }
     })
 
     let todoImg = $.createElement('img');
@@ -97,15 +89,10 @@ let ol = function(){
 function counter() {
     return $.querySelectorAll('li').length
 }
-//function counter01(){
-//     let red = $.getElementsByTagName('li').length
-//     red--
-//     return red +' items left'
-// }
 
-//function counter02(){
-//     let counter01 = $.getElementsByClassName('circleFill');
-//     if( counter01.length > 0){
-//         return counter() - 1
-//     }
-// }
+$.querySelector('.checklist-controlBoard-clear_order').onclick = function (){
+    let allCompleted = $.querySelectorAll('.circleFill')
+    for (let i = 0; i <allCompleted.length; i++){
+        allCompleted[i].parentElement.remove()
+    }
+}

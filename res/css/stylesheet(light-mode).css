@@ -123,6 +123,7 @@ input[type="text"] {
 .checklist-list-ul {
     margin: 0;
     padding: 0 0 1vw 0;
+    font-size: 20px;
 }
 
 .checklist-list-ul-li {
@@ -173,7 +174,8 @@ input[type="text"] {
 }
 
 .line-maker {
-    text-decoration: line-through;
+    text-decoration: line-through #cacde8;
+    color: #cacde8;
 }
 .circleFill{
     background: url(../images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
