@@ -1,3 +1,7 @@
+window.onload = function (){
+    alert(`با سلام، پشتیان عزیز خیلی کار داره می دونم ولی من تلاش ام رو کردم با تشکر`)
+}
+
 let $ = document;
 
 function toggleTheme_colors() {
