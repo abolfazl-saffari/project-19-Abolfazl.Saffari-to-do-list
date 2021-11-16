@@ -63,7 +63,7 @@ function todo(realInput) {
 
     todoImg.addEventListener('click', function (event) {
         event.target.parentElement.remove()
-        itemsLeft.textContent = counter() + ' items left'
+        itemsLeft.textContent = counter() - ol() +' items left'
     })
 
     todoLi.appendChild(todoDiv)
@@ -80,13 +80,13 @@ addToForm.addEventListener('submit', function (event) {
 myInput.addEventListener('keydown', function (event) {
     let realInput = event.target.value.trim();
     // با target اومدیم object چیزی رو که می خواستیم رو بیرون کشیدیدم
-    if (event.keyCode === 13) {
+    if (event.key === 'Enter') {
         if (realInput === '') {
             alert('میشه خالی enter نزنی اَه مرسی ')
         } else {
             myInput.value = '';
             todo(realInput)
-            itemsLeft.textContent = counter() + ' items left'
+            itemsLeft.textContent = counter() - ol() +' items left'
         }
     }
 })
