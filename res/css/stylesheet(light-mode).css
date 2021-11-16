@@ -138,8 +138,8 @@ input[type="text"] {
 .checklist-list-ul-li:hover .checklist-list-ul-li-remove {
     display: block;
 }
-
-.checklist-list-ul-li:hover .checklist-list-ul-li-statue {
+/*هاور رو تغییر دادم*/
+.checklist-list-ul-li-txt:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
     background-image: linear-gradient(white, white),
     linear-gradient(to right, #57ddff, #c058f3);
@@ -167,19 +167,19 @@ input[type="text"] {
     display: none;
 }
 
-/*
+
 .noHover{
     pointer-events: none;
 }
-.checklist-completed{
+
+.line-maker {
+    text-decoration: line-through;
+}
+.circleFill{
     background: url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
     background-repeat: no-repeat;
     background-position: 50%;
 }
-.checklist-list-ul-li-todo-p {
-    text-decoration: line-through;
-}
-*/
 .checklist-controlBoard {
     display: grid;
     grid-template-columns: 0.9fr 1fr 0.9fr;

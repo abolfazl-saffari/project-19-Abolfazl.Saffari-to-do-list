@@ -1,4 +1,5 @@
 let $ = document;
+
 function toggleTheme_colors() {
     let theme = $.getElementsByTagName('link')[0];
     if (theme.getAttribute('href') === 'res/css/stylesheet(light-mode).css') {
@@ -27,41 +28,38 @@ function toggleTheme_icon() {
 }
 
 
-
 let myInput = $.querySelector('input');
 let addToForm = $.querySelector('.checklist_adder-form');
 let itemsLeft = $.querySelector('.checklist-controlBoard-remaining_items');
 
+//let itemsR = $.getElementsByTagName('li').length -1
+
 function todo(realInput) {
     let todoLi = $.createElement('li');
-    todoLi.className ='checklist-list-ul-li';
+    todoLi.className = 'checklist-list-ul-li';
 
     let todoDiv = $.createElement('div');
     todoDiv.className = 'checklist-list-ul-li-statue';
 
-    todoDiv.addEventListener('click',function (event){
-        event.target.parentElement.style.textDecoration = 'line-through';
-        event.target.style.background = 'url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3)'
-        event.target.style.backgroundRepeat = 'no-repeat';
-        event.target.style.backgroundPosition = '50%';
-    })
+    //todoDiv.addEventListener('click',function (event){
+    //    event.target.parentElement.classList.toggle('line-maker');
+    //    event.target.classList.toggle('circleFill');
+    //})
 
     let todoSpan = $.createElement('span');
-    todoSpan.className ='checklist-list-ul-li-txt';
+    todoSpan.className = 'checklist-list-ul-li-txt';
     todoSpan.innerHTML = realInput;
-    todoSpan.addEventListener('click',function (event){
-        event.target.style.textDecoration = 'line-through';
-       // event.target.previousSibling.background ='url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3)'
-       // event.target.previousSibling.style.backgroundRepeat = 'no-repeat';
-       // event.target.previousSibling.style.backgroundPosition = '50%';
+    todoLi.addEventListener('click', function (event) {
+        event.target.children[1].classList.toggle('line-maker');
+        event.target.children[0].classList.toggle('circleFill')
     })
 
     let todoImg = $.createElement('img');
     todoImg.className = 'checklist-list-ul-li-remove';
-    todoImg.setAttribute('src','res/images/icon-cross.svg')
-    todoImg.setAttribute('alt','cross_icon')
+    todoImg.setAttribute('src', 'res/images/icon-cross.svg')
+    todoImg.setAttribute('alt', 'cross_icon')
 
-    todoImg.addEventListener('click',function (event){
+    todoImg.addEventListener('click', function (event) {
         event.target.parentElement.remove()
         itemsLeft.innerHTML = counter() + ' items left'
     })
@@ -70,7 +68,7 @@ function todo(realInput) {
     todoLi.appendChild(todoSpan)
     todoLi.appendChild(todoImg)
 
-    let todoUl =$.querySelector('ul');
+    let todoUl = $.querySelector('ul');
     todoUl.appendChild(todoLi)
 }
 
@@ -91,6 +89,7 @@ myInput.addEventListener('keydown', function (event) {
         }
     }
 })
-function  counter(){
+
+function counter() {
     return $.getElementsByTagName('li').length
 }
