@@ -30,6 +30,7 @@ function toggleTheme_icon() {
 
 let myInput = $.querySelector('input');
 let addToForm = $.querySelector('.checklist_adder-form');
+let itemsLeft = $.querySelector('.checklist-controlBoard-remaining_items');
 
 function todo(realInput) {
     let todoLi = $.createElement('li');
@@ -62,6 +63,7 @@ function todo(realInput) {
 
     todoImg.addEventListener('click',function (event){
         event.target.parentElement.remove()
+        itemsLeft.innerHTML = counter() + ' items left'
     })
 
     todoLi.appendChild(todoDiv)
@@ -85,7 +87,6 @@ myInput.addEventListener('keydown', function (event) {
             myInput.value = '';
             todo(realInput)
             counter()
-            let itemsLeft = $.querySelector('.checklist-controlBoard-remaining_items');
             itemsLeft.innerHTML = counter() + ' items left'
         }
     }
@@ -93,58 +94,3 @@ myInput.addEventListener('keydown', function (event) {
 function  counter(){
     return $.getElementsByTagName('li').length
 }
-// let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
-//  reamingItems.innerHTML =  document.getElementsByTagName('li').length + ' items left'
-//function countItems(listID){
-// var ul = document.getElementById(listID);
-// var i=0, itemCount =0;
-// while(ul.getElementsByTagName(‘li’) [i++]) itemCount++;
-// document.write(itemCount);
-// }
-//document.addEventListener("click", function adder(){
-//   let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
-//   let final =document.getElementsByTagName('li').length;
-//   reamingItems.textContent = final + ' items left';
-//   document.addEventListener('click',function remover(){
-//       let final01 =document.getElementsByClassName('checklist-list-ul-li-cross_icon');
-//       final--
-//
-//   })
-//  })
-//function adder(){
-//     let count = 0;
-//     for (let i = 0 ; i < document.getElementsByTagName('li').length;i++){
-//         count ++
-//     }
-//     let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
-//      return reamingItems.textContent = count +' items left';
-// }
-//
-// console.log(adder())
-
-//document.addEventListener("click", function adder() {
-//     let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
-//     let final = document.getElementsByTagName('li').length;
-//     reamingItems.textContent = final + ' items left';
-// })
-//let low = document.getElementsByClassName('checklist-list-ul-li-cross_icon');
-// low.onclick = function (){
-//    return  final--
-// }
-//let circleTOCheck = $.querySelectorAll('.checklist-list-ul-li-check_and_circle_icon-icon');
-// let sentenceToLine = $.querySelectorAll('.checklist-list-ul-li-todo p')
-// console.log(circleTOCheck)
-// for (let i = 0; i<circleTOCheck.length,i<sentenceToLine.length;i++){
-//     circleTOCheck[i].addEventListener('click',todo_completed);
-//     sentenceToLine[i].addEventListener('click',todo_completed01);
-// }
-// function todo_completed(){
-//     this.classList.toggle('checklist-completed');
-// }
-// function todo_completed01(){
-//     this.classList.toggle('checklist-list-ul-li-todo-p')
-// }
-// function hoverRomover(){
-//     this.classList.toggle('noHover')
-// }
-
