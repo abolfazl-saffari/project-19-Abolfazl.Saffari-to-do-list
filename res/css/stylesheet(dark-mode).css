@@ -139,6 +139,7 @@ input[type="text"] {
 .checklist-list-ul-li:hover .checklist-list-ul-li-remove{
     display: block;
 }
+/*
 .checklist-list-ul-li:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
     background-image: linear-gradient(#25273c, #25273c),
@@ -148,6 +149,7 @@ input[type="text"] {
     width: 22px;
     height: 22px;
 }
+ */
 .checklist-list-ul-li-statue{
     border: 1px solid #e4e5f1;
     width: 22px;
@@ -163,6 +165,18 @@ input[type="text"] {
 .checklist-list-ul-li-remove{
     cursor: pointer;
     display: none;
+}
+.noHover{
+    pointer-events: none;
+}
+
+.line-maker {
+    text-decoration: line-through;
+}
+.circleFill{
+    background: url(../images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .checklist-controlBoard {

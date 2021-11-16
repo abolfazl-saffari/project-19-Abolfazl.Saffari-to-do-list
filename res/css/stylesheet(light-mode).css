@@ -176,7 +176,7 @@ input[type="text"] {
     text-decoration: line-through;
 }
 .circleFill{
-    background: url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
+    background: url(../images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
     background-repeat: no-repeat;
     background-position: 50%;
 }
