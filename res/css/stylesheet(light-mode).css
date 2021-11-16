@@ -139,7 +139,7 @@ input[type="text"] {
     display: block;
 }
 /*هاور رو تغییر دادم*/
-.checklist-list-ul-li-txt:hover .checklist-list-ul-li-statue {
+/*.checklist-list-ul-li:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
     background-image: linear-gradient(white, white),
     linear-gradient(to right, #57ddff, #c058f3);
@@ -147,7 +147,7 @@ input[type="text"] {
     background-clip: content-box, border-box;
     width: 22px;
     height: 22px;
-}
+}*/
 
 .checklist-list-ul-li-statue {
     border: 1px solid #e4e5f1;

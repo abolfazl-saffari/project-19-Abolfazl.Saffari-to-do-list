@@ -32,8 +32,6 @@ let myInput = $.querySelector('input');
 let addToForm = $.querySelector('.checklist_adder-form');
 let itemsLeft = $.querySelector('.checklist-controlBoard-remaining_items');
 
-//let itemsR = $.getElementsByTagName('li').length -1
-
 function todo(realInput) {
     let todoLi = $.createElement('li');
     todoLi.className = 'checklist-list-ul-li';
@@ -52,6 +50,10 @@ function todo(realInput) {
     todoLi.addEventListener('click', function (event) {
         event.target.children[1].classList.toggle('line-maker');
         event.target.children[0].classList.toggle('circleFill')
+        itemsLeft.textContent = counter() - ol() +' items left'
+       // if (event.target.children[0].classList.contains('circleFill')){
+        //    itemsLeft.textContent = counter01()
+       // }
     })
 
     let todoImg = $.createElement('img');
@@ -61,7 +63,7 @@ function todo(realInput) {
 
     todoImg.addEventListener('click', function (event) {
         event.target.parentElement.remove()
-        itemsLeft.innerHTML = counter() + ' items left'
+        itemsLeft.textContent = counter() + ' items left'
     })
 
     todoLi.appendChild(todoDiv)
@@ -84,12 +86,26 @@ myInput.addEventListener('keydown', function (event) {
         } else {
             myInput.value = '';
             todo(realInput)
-            counter()
-            itemsLeft.innerHTML = counter() + ' items left'
+            itemsLeft.textContent = counter() + ' items left'
         }
     }
 })
+let ol = function(){
+    return $.querySelectorAll('.circleFill').length
+}
 
 function counter() {
-    return $.getElementsByTagName('li').length
+    return $.querySelectorAll('li').length
 }
+//function counter01(){
+//     let red = $.getElementsByTagName('li').length
+//     red--
+//     return red +' items left'
+// }
+
+//function counter02(){
+//     let counter01 = $.getElementsByClassName('circleFill');
+//     if( counter01.length > 0){
+//         return counter() - 1
+//     }
+// }
