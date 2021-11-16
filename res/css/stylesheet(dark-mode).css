@@ -92,7 +92,7 @@ input[type="text"] {
     grid-area: -checklist_adder-form;
 }
 
-.checklist_adder-form-label{
+.checklist_adder-form-label {
 
 }
 
@@ -127,7 +127,7 @@ input[type="text"] {
     font-size: 20px;
 }
 
-.checklist-list-ul-li{
+.checklist-list-ul-li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -137,9 +137,11 @@ input[type="text"] {
     cursor: grab;
 
 }
-.checklist-list-ul-li:hover .checklist-list-ul-li-remove{
+
+.checklist-list-ul-li:hover .checklist-list-ul-li-remove {
     display: block;
 }
+
 /*
 .checklist-list-ul-li:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
@@ -151,91 +153,92 @@ input[type="text"] {
     height: 22px;
 }
  */
-.checklist-list-ul-li-statue{
+.checklist-list-ul-li-statue {
     border: 1px solid #e4e5f1;
     width: 22px;
     height: 22px;
     border-radius: 50%;
 }
 
-.checklist-list-ul-li-txt{
-    flex-grow:3;
+.checklist-list-ul-li-txt {
+    flex-grow: 3;
     padding: 0 0.75vw;
     color: #616161;
 }
-.checklist-list-ul-li-remove{
+
+.checklist-list-ul-li-remove {
     cursor: pointer;
     display: none;
 }
-.noHover{
+
+.noHover {
     pointer-events: none;
 }
 
 .line-maker {
     text-decoration: line-through;
 }
-.circleFill{
-    background: url(../images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
+
+.circleFill {
+    background: url(../images/icon-check.svg), linear-gradient(135deg, #57ddff, #c058f3);
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
 .checklist-controlBoard {
-    display: grid;
-    grid-template-columns: 0.9fr 1fr 0.9fr;
-    grid-template-rows: 0.1fr;
-    gap: 0 0;
-    grid-template-areas:
-    "checklist-controlBoard-remaining_items checklist-controlBoard-base_orders checklist-controlBoard-clear_order";
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
     width: 27.5%;
     height: 3rem;
-    margin: 0 auto 0 auto;
     background-color: #25273c;
-    border-radius: 0 0 5px 5px ;
-    padding: 0 0.8vw;
+    border-radius: 0 0 5px 5px;
+    margin: 0 auto 0 auto;
+    padding: 0.5vw 0.8vw;
 }
+
 .checklist-controlBoard-remaining_items {
-    grid-area: checklist-controlBoard-remaining_items;
-    font-size: 14px;
+    font-size: 0.85vw;
     color: #777a92;
-}
-.checklist-controlBoard-base_orders{
-    grid-area: checklist-controlBoard-base_orders;
 }
 
 .checklist-controlBoard-base_orders-all_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     cursor: pointer;
     color: #3a7cfd;
     margin-right: 1rem;
-
 }
+
 .checklist-controlBoard-base_orders-active_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     color: #4d5066;
     cursor: pointer;
 }
+
 .checklist-controlBoard-base_orders-completed_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     color: #4d5066;
     cursor: pointer;
     margin-left: 1rem;
 }
-.checklist-controlBoard-base_orders-all_order:hover,.checklist-controlBoard-base_orders-active_order:hover,.checklist-controlBoard-base_orders-completed_order:hover,.checklist-controlBoard-clear_order:hover{
+
+.checklist-controlBoard-base_orders-all_order:hover, .checklist-controlBoard-base_orders-active_order:hover, .checklist-controlBoard-base_orders-completed_order:hover, .checklist-controlBoard-clear_order:hover {
     color: #ffffff;
 }
+
 .checklist-controlBoard-clear_order {
-    grid-area: checklist-controlBoard-clear_order;
     text-align: right;
-    font-size: 13.3px;
+    font-size: 0.75vw;
     color: #777a92;
     cursor: pointer;
 }
 
-.instruction{
+.instruction {
     width: 27.5%;
     text-align: center;
     margin: 2vw auto 0 auto;
@@ -243,7 +246,7 @@ input[type="text"] {
     color: #777a92;
 }
 
-.instruction-first_one{
+.instruction-first_one {
 
 }
 
@@ -261,22 +264,28 @@ input[type="text"] {
 .footer-link {
     color: #3a7bfd;
 }
+
 @media only screen and (max-width: 425px) {
     .header {
         width: 90%;
     }
+
     .checklist_adder {
         width: 90%;
     }
+
     .checklist-list {
         width: 90%;
     }
+
     .checklist-controlBoard {
         width: 88.5%;
     }
+
     .instruction {
         width: 88.5%;
     }
+
     .footer {
         position: sticky;
         bottom: 0;

@@ -139,6 +139,7 @@ input[type="text"] {
 .checklist-list-ul-li:hover .checklist-list-ul-li-remove {
     display: block;
 }
+
 /*هاور رو تغییر دادم*/
 /*.checklist-list-ul-li:hover .checklist-list-ul-li-statue {
     border: solid 1px transparent;
@@ -169,7 +170,7 @@ input[type="text"] {
 }
 
 
-.noHover{
+.noHover {
     pointer-events: none;
 }
 
@@ -177,39 +178,35 @@ input[type="text"] {
     text-decoration: line-through #cacde8;
     color: #cacde8;
 }
-.circleFill{
-    background: url(../images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3);
+
+.circleFill {
+    background: url(../images/icon-check.svg), linear-gradient(135deg, #57ddff, #c058f3);
     background-repeat: no-repeat;
     background-position: 50%;
 }
+
 .checklist-controlBoard {
-    display: grid;
-    grid-template-columns: 0.9fr 1fr 0.9fr;
-    grid-template-rows: 0.1fr;
-    gap: 0 0;
-    grid-template-areas:
-    "checklist-controlBoard-remaining_items checklist-controlBoard-base_orders checklist-controlBoard-clear_order";
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
     width: 27.5%;
     height: 3rem;
-    margin: 0 auto 0 auto;
     background-color: #ffffff;
     border-radius: 0 0 5px 5px;
-    padding: 0 0.8vw;
     box-shadow: 0 20px 30px rgba(189, 189, 189, 0.48);
+    margin: 0 auto 0 auto;
+    padding: 0.5vw 0.8vw;
 }
 
 .checklist-controlBoard-remaining_items {
-    grid-area: checklist-controlBoard-remaining_items;
-    font-size: 14px;
+    font-size: 0.85vw;
     color: #777a92;
 }
 
-.checklist-controlBoard-base_orders {
-    grid-area: checklist-controlBoard-base_orders;
-}
-
 .checklist-controlBoard-base_orders-all_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     cursor: pointer;
     color: #3a7cfd;
@@ -217,14 +214,14 @@ input[type="text"] {
 }
 
 .checklist-controlBoard-base_orders-active_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     color: #777a92;
     cursor: pointer;
 }
 
 .checklist-controlBoard-base_orders-completed_order {
-    font-size: 14px;
+    font-size: 0.85vw;
     font-weight: 600;
     color: #777a92;
     cursor: pointer;
@@ -236,9 +233,8 @@ input[type="text"] {
 }
 
 .checklist-controlBoard-clear_order {
-    grid-area: checklist-controlBoard-clear_order;
     text-align: right;
-    font-size: 13.3px;
+    font-size: 0.75vw;
     color: #777a92;
     cursor: pointer;
 }
@@ -260,7 +256,7 @@ input[type="text"] {
     position: fixed;
     padding: 10px;
     text-align: center;
-    font-size: 13px;
+    font-size: 0.9vw;
     width: 100%;
     bottom: 0;
     box-shadow: 0 -5px 5px rgba(189, 189, 189, 0.48);
@@ -270,6 +266,7 @@ input[type="text"] {
     color: #3a7bfd;
 }
 
+/*
 @media only screen and (max-width: 425px) {
     .header {
         width: 90%;
@@ -300,3 +297,4 @@ input[type="text"] {
         padding: 2px 0;
     }
 }
+ */
