@@ -50,6 +50,9 @@ function todo(realInput) {
     todoSpan.innerHTML = realInput;
     todoSpan.addEventListener('click',function (event){
         event.target.style.textDecoration = 'line-through';
+       // event.target.previousSibling.background ='url(/res/images/icon-check.svg),linear-gradient(135deg,#57ddff,#c058f3)'
+       // event.target.previousSibling.style.backgroundRepeat = 'no-repeat';
+       // event.target.previousSibling.style.backgroundPosition = '50%';
     })
 
     let todoImg = $.createElement('img');
@@ -81,9 +84,15 @@ myInput.addEventListener('keydown', function (event) {
         } else {
             myInput.value = '';
             todo(realInput)
+            counter()
+            let itemsLeft = $.querySelector('.checklist-controlBoard-remaining_items');
+            itemsLeft.innerHTML = counter() + ' items left'
         }
     }
 })
+function  counter(){
+    return $.getElementsByTagName('li').length
+}
 // let reamingItems = document.getElementsByClassName('checklist-controlBoard-remaining_items')[0];
 //  reamingItems.innerHTML =  document.getElementsByTagName('li').length + ' items left'
 //function countItems(listID){
