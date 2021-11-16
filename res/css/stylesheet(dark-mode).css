@@ -124,6 +124,7 @@ input[type="text"] {
     margin: 0;
     padding: 0 0 1vw 0;
     background-color: #25273c;
+    font-size: 20px;
 }
 
 .checklist-list-ul-li{
@@ -132,7 +133,7 @@ input[type="text"] {
     align-items: center;
     list-style-type: none;
     padding: 1vw 0.75vw;
-    border-bottom: 1px solid #e4e5f1;
+    border-bottom: 1px solid #393a4c;
     cursor: grab;
 
 }
@@ -213,13 +214,13 @@ input[type="text"] {
 .checklist-controlBoard-base_orders-active_order {
     font-size: 14px;
     font-weight: 600;
-    color: #777a92;
+    color: #4d5066;
     cursor: pointer;
 }
 .checklist-controlBoard-base_orders-completed_order {
     font-size: 14px;
     font-weight: 600;
-    color: #777a92;
+    color: #4d5066;
     cursor: pointer;
     margin-left: 1rem;
 }
