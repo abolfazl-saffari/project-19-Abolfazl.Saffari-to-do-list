@@ -1,4 +1,4 @@
-window.onload = function (){
+window.onload = function () {
     alert(`با سلام، پشتیان عزیز خیلی کار داره می دونم ولی من تلاش ام رو کردم با تشکر`)
 }
 
@@ -42,14 +42,16 @@ function todo(realInput) {
 
     let todoDiv = $.createElement('div');
     todoDiv.className = 'checklist-list-ul-li-statue';
+    todoDiv.classList.add('circleUnFill')
 
     let todoSpan = $.createElement('span');
     todoSpan.className = 'checklist-list-ul-li-txt';
     todoSpan.innerHTML = realInput;
     todoLi.addEventListener('click', function (event) {
         event.target.children[1].classList.toggle('line-maker');
-        event.target.children[0].classList.toggle('circleFill')
-        itemsLeft.textContent = counter() - ol() +' items left'
+        event.target.children[0].classList.remove('circleUnFill');
+        event.target.children[0].classList.toggle('circleFill');
+        itemsLeft.textContent = counter() - ol() + ' items left'
     })
 
     let todoImg = $.createElement('img');
@@ -59,7 +61,7 @@ function todo(realInput) {
 
     todoImg.addEventListener('click', function (event) {
         event.target.parentElement.remove()
-        itemsLeft.textContent = counter() - ol() +' items left'
+        itemsLeft.textContent = counter() - ol() + ' items left'
     })
 
     todoLi.appendChild(todoDiv)
@@ -82,11 +84,11 @@ myInput.addEventListener('keydown', function (event) {
         } else {
             myInput.value = '';
             todo(realInput)
-            itemsLeft.textContent = counter() - ol() +' items left'
+            itemsLeft.textContent = counter() - ol() + ' items left'
         }
     }
 })
-let ol = function(){
+let ol = function () {
     return $.querySelectorAll('.circleFill').length
 }
 
@@ -94,9 +96,35 @@ function counter() {
     return $.querySelectorAll('li').length
 }
 
-$.querySelector('.checklist-controlBoard-clear_order').onclick = function (){
+$.querySelector('.checklist-controlBoard-clear_order').onclick = function () {
     let allCompleted = $.querySelectorAll('.circleFill')
-    for (let i = 0; i <allCompleted.length; i++){
+    for (let i = 0; i < allCompleted.length; i++) {
         allCompleted[i].parentElement.remove()
     }
 }
+
+//تو گوشی فرستادم که با باید فلیتر کنی class ها خودت رو
+let activeOrder = $.querySelector('.checklist-controlBoard-base_orders-active_order')
+activeOrder.onclick = function () {
+    // if بزن برای بودن خط زیر نبودن آن
+    let addDisplayCircleFill = $.querySelectorAll('.circleFill')
+    for (let i = 0; i < addDisplayCircleFill.length; i++) {
+        addDisplayCircleFill[i].parentElement.classList.add('displayNone')
+    }
+}
+
+let completedOrder = $.querySelector('.checklist-controlBoard-base_orders-completed_order');
+ completedOrder.onclick = function () {
+     let addDisplayCircleUnFill = $. querySelectorAll('.circleUnFill')
+     for (let i = 0; i <addDisplayCircleUnFill.length; i++) {
+           addDisplayCircleUnFill[i].parentElement.classList.add('displayNone')
+     }
+ }
+
+let allOrder = $.querySelector('.checklist-controlBoard-base_orders-all_order');
+ allOrder.onclick = function (){
+     let li = $. querySelectorAll('li');
+     for (let i = 0; i <li.length; i++) {
+         li[i].classList.remove('displayNone')
+     }
+ }
