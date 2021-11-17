@@ -106,18 +106,25 @@ $.querySelector('.checklist-controlBoard-clear_order').onclick = function () {
 //تو گوشی فرستادم که با باید فلیتر کنی class ها خودت رو
 let activeOrder = $.querySelector('.checklist-controlBoard-base_orders-active_order')
 activeOrder.onclick = function () {
-    // if بزن برای بودن خط زیر نبودن آن
     let addDisplayCircleFill = $.querySelectorAll('.circleFill')
+    let li = $. querySelectorAll('li');
     for (let i = 0; i < addDisplayCircleFill.length; i++) {
-        addDisplayCircleFill[i].parentElement.classList.add('displayNone')
+        addDisplayCircleFill[i].parentElement.classList.add('displayNone01')
+    }
+    for (let i = 0;i < li.length;i++){
+        li[i].classList.remove('displayNone')
     }
 }
 
 let completedOrder = $.querySelector('.checklist-controlBoard-base_orders-completed_order');
  completedOrder.onclick = function () {
      let addDisplayCircleUnFill = $. querySelectorAll('.circleUnFill')
+     let li = $. querySelectorAll('li');
      for (let i = 0; i <addDisplayCircleUnFill.length; i++) {
            addDisplayCircleUnFill[i].parentElement.classList.add('displayNone')
+     }
+     for (let i = 0;i < li.length;i++){
+         li[i].classList.remove('displayNone01')
      }
  }
 
@@ -126,5 +133,6 @@ let allOrder = $.querySelector('.checklist-controlBoard-base_orders-all_order');
      let li = $. querySelectorAll('li');
      for (let i = 0; i <li.length; i++) {
          li[i].classList.remove('displayNone')
+         li[i].classList.remove('displayNone01')
      }
  }
