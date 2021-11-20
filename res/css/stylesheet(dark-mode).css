@@ -219,6 +219,13 @@ input[type="text"] {
     cursor: pointer;
 }
 
+.displayNone{
+    display: none;
+}
+.displayNone01{
+    display: none;
+}
+
 .checklist-controlBoard-base_orders-completed_order {
     font-size: 0.85vw;
     font-weight: 600;

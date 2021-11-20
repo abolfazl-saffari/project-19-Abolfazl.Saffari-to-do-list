@@ -136,3 +136,7 @@ allOrder.onclick = function () {
         li[i].classList.remove('displayNone01')
     }
 }
+let dragAble = document.querySelector('.checklist-list-ul')
+new Sortable(dragAble,{
+    animation : 300
+})

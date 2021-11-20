@@ -226,10 +226,6 @@ input[type="text"] {
     display: none;
 }
 
-.displayBlock{
-    display: flex;
-}
-
 .checklist-controlBoard-base_orders-completed_order {
     font-size: 0.85vw;
     font-weight: 600;
