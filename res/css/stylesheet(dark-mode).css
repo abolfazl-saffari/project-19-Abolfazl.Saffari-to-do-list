@@ -262,7 +262,7 @@ input[type="text"] {
     position: fixed;
     padding: 10px;
     text-align: center;
-    font-size: 13px;
+    font-size: 0.9vw;
     width: 100%;
     bottom: 0;
     box-shadow: 0 -5px 5px rgba(189, 189, 189, 0.02);
